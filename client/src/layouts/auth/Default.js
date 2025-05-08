@@ -38,12 +38,11 @@ function AuthIllustration(props) {
           position="absolute"
           flexDirection={"column"}
           alignItems={"center"}
-          // bg={'black'}
           overflow={"hidden"}
           right="0px"
         >
           <Link
-            to="https://prolinkinfotech.com/"
+            to="https://companyname.com"
             target="_blank"
             style={{ height: "50%", width: "50%" }}
           >
@@ -57,13 +56,6 @@ function AuthIllustration(props) {
               bgPosition="50%"
             />
           </Link>
-          {/* <Box
-            border={'1px solid'}
-            p={4}
-            borderRadius={10}
-          >
-            Hi
-          </Box> */}
         </Box>
         <Footer />
       </Flex>

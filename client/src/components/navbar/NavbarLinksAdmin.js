@@ -1,4 +1,5 @@
-// Chakra Imports
+/*eslint-disable*/
+import React from "react";
 import {
   Avatar,
   Button,
@@ -28,8 +29,10 @@ import jwtDecode from "jwt-decode";
 import { ThemeEditor } from "./ThemeEditor";
 import FixedPlugin from "components/fixedPlugin/FixedPlugin";
 import { useDispatch, useSelector } from "react-redux";
+
 export default function HeaderLinks(props) {
   const { secondary, setOpenSidebar, openSidebar, routes } = props;
+
   // Chakra Color Mode
   const navbarIcon = useColorModeValue("gray.400", "white");
   let menuBg = useColorModeValue("white", "navy.800");
@@ -43,9 +46,7 @@ export default function HeaderLinks(props) {
     "14px 17px 40px 4px rgba(112, 144, 176, 0.18)",
     "14px 17px 40px 4px rgba(112, 144, 176, 0.06)",
   );
-  // const borderButton = useColorModeValue('secondaryGray.500', 'whiteAlpha.200');
 
-  // const [loginUser, setLoginUser] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userData = useSelector((state) => state?.user?.user);
@@ -109,12 +110,6 @@ export default function HeaderLinks(props) {
       borderRadius="30px"
       boxShadow={shadow}
     >
-      {/* <SearchBar
-				mb={secondary ? { base: "10px", md: "unset" } : "unset"}
-				me="10px"
-				borderRadius="30px"
-			/> */}
-
       <Flex
         bg={ethBg}
         display={secondary ? "flex" : "none"}
@@ -217,15 +212,13 @@ export default function HeaderLinks(props) {
           </Flex>
         </MenuList>
       </Menu>
-      {/* <FixedPlugin /> */}
-      {/* <ThemeEditor navbarIcon={navbarIcon} /> */}
 
       <Menu style={{ zIndex: 1500 }}>
         <MenuButton p="0px">
           <Avatar
             _hover={{ cursor: "pointer" }}
             color="white"
-            name={user || "Prolink Infotech"}
+            name={user || "User"}
             bg="#11047A"
             size="sm"
             w="40px"
@@ -298,9 +291,6 @@ export default function HeaderLinks(props) {
                 Profile Settings
               </Text>
             </MenuItem>
-            {/*<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} borderRadius="8px" px="14px">
-							<Text fontSize="sm">Newsletter Settings</Text>
-						</MenuItem> */}
             <MenuItem
               _hover={{ bg: "none" }}
               onClick={logOut}

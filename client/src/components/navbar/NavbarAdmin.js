@@ -1,4 +1,5 @@
-// Chakra Imports
+/*eslint-disable*/
+import React from "react";
 import {
   Box,
   Flex,
@@ -38,7 +39,7 @@ export default function AdminNavbar(props) {
     largeLogo,
     routes,
   } = props;
-  // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
+
   let mainText = useColorModeValue("navy.700", "white");
   let secondaryText = useColorModeValue("gray.700", "white");
   let navbarPosition = "fixed";
@@ -51,6 +52,7 @@ export default function AdminNavbar(props) {
   let paddingX = "15px";
   let gap = "0px";
   let size = "sm";
+  
   const changeNavbar = () => {
     if (window?.scrollY > 1) {
       setScrolled(true);
@@ -58,6 +60,7 @@ export default function AdminNavbar(props) {
       setScrolled(false);
     }
   };
+
   return (
     <Box
       position={navbarPosition}
@@ -68,7 +71,6 @@ export default function AdminNavbar(props) {
       backdropFilter={navbarBackdrop}
       backgroundPosition="center"
       backgroundSize="cover"
-      // borderRadius='16px'
       borderWidth="1.5px"
       borderStyle="solid"
       zIndex={1}
@@ -85,7 +87,6 @@ export default function AdminNavbar(props) {
       mt={secondaryMargin}
       pb="6px"
       right={{ base: "0px" }}
-      // right={{ base: '12px', md: '30px', lg: '30px', xl: '30px' }}
       px={{
         sm: paddingX,
         md: "10px",
@@ -97,11 +98,6 @@ export default function AdminNavbar(props) {
       top={{ base: "0px" }}
       w={{
         base: "100vw",
-        // base: 'calc(100vw - 0%)',
-        // md: 'calc(100vw - 0%)',
-        // lg: 'calc(100vw - 0%)',
-        // xl: openSidebar === true ? 'calc(100vw - 286px)' : 'calc(100vw - 80px)',
-        // '2xl': openSidebar === true ? 'calc(100vw - 286px)' : 'calc(100vw - 80px)'
       }}
       sx={{ boxShadow: "14px 17px 40px 4px rgba(112, 144, 176, 0.08)" }}
     >
@@ -115,34 +111,9 @@ export default function AdminNavbar(props) {
         mb={gap}
       >
         <Box
-          //  mb={{ sm: '8px', md: '10px' }}
-          //  pt="15px"
           display={"flex"}
           alignItems={"center"}
         >
-          {/*
-					<Breadcrumb>
-						<BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
-							<BreadcrumbLink as={rrd.Link} to='/admin/default' color={secondaryText}>
-								<AiTwotoneHome />
-							</BreadcrumbLink>
-						</BreadcrumbItem>
-
-						{under?.under && <BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
-							<BreadcrumbLink as={rrd.Link} to={`${under.both === true ? '' : under.layout + '/'}${under.under}`} color={secondaryText}>
-								{under.parentName}
-							</BreadcrumbLink>
-						</BreadcrumbItem>}
-
-
-						<BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
-							<BreadcrumbLink as={rrd.Link} to='#' color={secondaryText}>
-								{brandText}
-							</BreadcrumbLink>
-						</BreadcrumbItem>
-
-					</Breadcrumb>
-					*/}
           <Flex
             me={openSidebar ? "" : "5"}
             mx={openSidebar ? "14" : "1"}
@@ -160,8 +131,8 @@ export default function AdminNavbar(props) {
                   openSidebar === true
                     ? largeLogo[0]?.logoLgImg
                     : largeLogo[0]?.logoSmImg
-                } // Set the source path of your image
-                alt="Logo" // Set the alt text for accessibility
+                }
+                alt="Logo"
                 cursor="pointer"
                 onClick={() => !props?.from && setOpenSidebar(!openSidebar)}
                 userSelect="none"
@@ -179,7 +150,7 @@ export default function AdminNavbar(props) {
                 onClick={() => !props?.from && setOpenSidebar(!openSidebar)}
                 userSelect={"none"}
               >
-                {openSidebar === true ? "Prolink" : "Pr"}
+                {openSidebar === true ? "Brand" : "Br"}
               </Heading>
             )}
           </Flex>
@@ -203,7 +174,7 @@ export default function AdminNavbar(props) {
               />
             ) : (
               <Heading my={4} cursor={"pointer"} userSelect={"none"}>
-                {openSidebar === true ? "Prolink" : "Pr"}
+                {openSidebar === true ? "Brand" : "Br"}
               </Heading>
             )}
           </Link>

@@ -86,8 +86,8 @@ const connectDB = async (DATABASE_URL, DATABASE) => {
         let adminExisting = await User.find({ role: 'superAdmin' });
         if (adminExisting.length <= 0) {
             const phoneNumber = 7874263694
-            const firstName = 'Prolink'
-            const lastName = 'Infotech'
+            const firstName = 'Admin'
+            const lastName = 'Admin'
             const username = 'admin@gmail.com'
             const password = 'admin123'
             // Hash the password
